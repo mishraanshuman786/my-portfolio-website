@@ -3,10 +3,9 @@ import Grid from "@/components/Grid";
 
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { link } from "fs";
 
 export default function Home() {
-  let navItems = [
+  const navItems = [
     {
       name: "Home",
       link: "#home",
