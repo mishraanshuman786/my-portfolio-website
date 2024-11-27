@@ -1,9 +1,27 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { Worker } from "@react-pdf-viewer/core";
+import { Viewer } from "@react-pdf-viewer/core";
+import "@react-pdf-viewer/core/lib/styles/index.css";
 
 export default function Resume({ isVisible, setIsVisible }) {
   const overlayRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Determine if the device is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile if width is 768px or less
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // Close overlay when clicking outside
   useEffect(() => {
@@ -24,22 +42,37 @@ export default function Resume({ isVisible, setIsVisible }) {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-transparent bg-opacity-50 flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div
         ref={overlayRef}
-        className="bg-white rounded-lg p-6 shadow-lg w-[80vw] h-[80vh] max-w-md"
+        className={`bg-white rounded-lg shadow-lg p-4 ${
+          isMobile ? "w-[80vw] h-[70vh]" : "w-[80vw] h-[80vh] max-w-4xl"
+        }`}
       >
-        <embed
-          src="/RESUME.pdf"
-          type="application/pdf"
-          width="100%"
-          height="100%"
-        />
+        {/* Worker for PDF.js */}
+        <Worker
+          workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
+        >
+          {/* Wrapper for PDF viewer with scrollbar */}
+          <div
+            className={`h-full overflow-y-scroll ${
+              isMobile
+                ? "scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+                : ""
+            }`}
+            style={{
+              scrollbarWidth: "thin",
+              scrollbarColor: "#d1d5db #f3f4f6", // Custom scrollbar for Firefox
+            }}
+          >
+            <Viewer fileUrl="/RESUME.pdf" />
+          </div>
+        </Worker>
 
         {/* Close button */}
         <button
           onClick={() => setIsVisible(false)} // Close overlay
-          className="mt-2 rounded-md   text-white border border-white px-4 py-[-2px]  z-20 hover:bg-white hover:text-red-600"
+          className="mt-4 text-white bg-red-500 px-4 py-2 rounded-md hover:bg-red-700"
         >
           Close
         </button>

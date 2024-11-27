@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@react-pdf-viewer /core/lib/styles/index.css;
+@react-pdf-viewer /default-layout/lib/styles/index.css;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
