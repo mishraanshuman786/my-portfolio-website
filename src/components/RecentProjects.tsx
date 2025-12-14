@@ -2,14 +2,17 @@ import { projects } from "@/app/data";
 import React from "react";
 import { PinContainer } from "./ui/3d-pin";
 import { FaLocationArrow } from "react-icons/fa";
+import CustomUnderline from "./ui/CustomUnderline";
 
 const RecentProjects = () => {
   return (
     <div className="py-20">
+      <CustomUnderline>
       <h1 className="heading">
         A small selection of {""}{" "}
         <span className="text-purple-400">recent projects.</span>
       </h1>
+      </CustomUnderline>
       <div className="flex flex-wrap justify-center items-center p-4 gap-16  mt-10 ">
         {projects.map(({ id, title, des, img, iconLists, link }) => {
           return (
