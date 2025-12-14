@@ -45,7 +45,7 @@ export default function Home() {
         <div id="projects">
           <RecentProjects />
         </div>
-        <div id="about">
+        <div id="about-me">
            <About />
         </div>
         <div id="contact">

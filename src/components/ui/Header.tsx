@@ -8,10 +8,9 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Resume", href: "#resume" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Blog", href: "#blog" },
+    { name: "About", href: "#about-me" },
+  
+    { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -91,7 +90,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-black text-white shadow-md">
+        <div className="lg:hidden black-gradient min-h-screen text-white shadow-md">
           <nav className="flex flex-col space-y-3 p-4">
             {navLinks.map((link) => (
               <a
