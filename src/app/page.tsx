@@ -2,32 +2,14 @@ import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 
 import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/floating-navbar";
+
 import About from "@/components/About";
 import Header from "@/components/ui/Header";
 import Contact from "@/components/Contact";
 import Footer from "@/components/ui/Footer";
 
 export default function Home() {
-  const navItems = [
-    {
-      name: "Home",
-      link: "#home",
-    },
-    {
-      name: "Projects",
-      link: "#projects",
-    },
-    {
-      name: "About",
-      link: "#",
-    },
-    {
-      name: "Contact",
-      link: "#",
-    },
-  ];
-
+  
   return (
     <>
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5  ">
