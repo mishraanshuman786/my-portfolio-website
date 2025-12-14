@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { TextGenerateEffect } from "./text-generate-effect";
 import { Button } from "./moving-border";
+
 import Resume from "../Resume.jsx";
 import { useRouter } from "next/navigation";
 
