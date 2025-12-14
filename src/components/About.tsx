@@ -36,7 +36,7 @@ const About = () => {
         {/* Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left" data-aos="fade-left" data-aos-delay="400">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2">
-            Hi There! I'm Anshuman Mishra
+            Hi There! I&apos;m Anshuman Mishra
           </h2>
 
           <h4 className="text-base sm:text-lg text-yellow-500 mb-4">
