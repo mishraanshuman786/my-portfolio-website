@@ -49,7 +49,7 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-ink font-body text-cream antialiased">
-      <Nav />
+      
       <main>
         <Hero latestResume={latestResume} />
         <Marquee />
@@ -61,7 +61,7 @@ export default async function HomePage() {
         <Services />
         <Contact />
       </main>
-      <Footer />
+     
     </div>
   );
 }

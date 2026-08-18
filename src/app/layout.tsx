@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { Nav } from "@/components/home/Nav";
+import { Footer } from "@/components/home/Footer";
 
 export const metadata: Metadata = {
   title: "Anshuman Mishra — Full Stack MERN + AI Engineer",
@@ -29,7 +31,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <Nav/>
       <body className="bg-ink text-cream antialiased">{children}</body>
+      <Footer />
     </html>
   );
 }

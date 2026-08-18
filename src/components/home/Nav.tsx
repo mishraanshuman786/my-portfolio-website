@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 import { IconClose, IconMenu } from "@/components/ui/Icons";
 
 const LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#work", label: "Work" },
-  { href: "#ai-lab", label: "AI Lab" },
-  { href: "#services", label: "Services" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#work", label: "Work" },
+  { href: "/#ai-lab", label: "AI Lab" },
+  { href: "/#services", label: "Services" },
+  { href: "/#contact", label: "Contact" },
+  { href:"/learning", label:"Learning"}
 ];
 
 export function Nav() {
